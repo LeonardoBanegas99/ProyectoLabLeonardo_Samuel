@@ -8,7 +8,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
     public ProyectoLabGUI() {
         initComponents();
-        votos();
+       // votos();
     }
 
     @SuppressWarnings("unchecked")
@@ -82,6 +82,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                System.out.println("hola");
                 new ProyectoLabGUI().setVisible(true);
             }
         });
