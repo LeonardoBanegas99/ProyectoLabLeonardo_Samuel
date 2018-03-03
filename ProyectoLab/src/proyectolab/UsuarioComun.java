@@ -1,12 +1,13 @@
 package proyectolab;
 
-
 import java.util.ArrayList;
 import java.util.Date;
+
 public class UsuarioComun extends Usuarios {
+
     private String direccion;
     private ArrayList<Mensaje> mensaje = new ArrayList();
-    private ArrayList<UsuarioCandidato> candidato = new ArrayList();
+    private ArrayList<UsuarioCandidato> candidatoseguidos = new ArrayList();
     private ArrayList<UsuarioComun> amigos = new ArrayList();
 
     public UsuarioComun() {
@@ -34,11 +35,11 @@ public class UsuarioComun extends Usuarios {
     }
 
     public ArrayList<UsuarioCandidato> getCandidato() {
-        return candidato;
+        return candidatoseguidos;
     }
 
     public void setCandidato(ArrayList<UsuarioCandidato> candidato) {
-        this.candidato = candidato;
+        this.candidatoseguidos = candidato;
     }
 
     public ArrayList<UsuarioComun> getAmigos() {
@@ -51,7 +52,7 @@ public class UsuarioComun extends Usuarios {
 
     @Override
     public String toString() {
-        return "UsuarioComun{" + "direccion=" + direccion + ", mensaje=" + mensaje + ", candidato=" + candidato + ", amigos=" + amigos + '}';
+        return "UsuarioComun{" + "direccion=" + direccion + ", mensaje=" + mensaje + ", candidato=" + candidatoseguidos + ", amigos=" + amigos + '}';
     }
-    
+
 }
