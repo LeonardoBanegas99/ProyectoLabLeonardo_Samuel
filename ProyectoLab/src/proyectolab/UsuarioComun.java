@@ -13,6 +13,10 @@ public class UsuarioComun extends Usuarios {
     public UsuarioComun() {
     }
 
+    public UsuarioComun(String usuario, String contrasena, Date fechadenacimiento, String correoelectronico, String sexo, String nombre) {
+        super(usuario, contrasena, fechadenacimiento, correoelectronico, sexo, nombre);
+    }
+
     public UsuarioComun(String direccion, String usuario, String contrasena, Date fechadenacimiento, String correoelectronico, String sexo, String nombre) {
         super(usuario, contrasena, fechadenacimiento, correoelectronico, sexo, nombre);
         this.direccion = direccion;
