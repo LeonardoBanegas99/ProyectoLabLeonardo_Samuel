@@ -17,7 +17,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-
         FrameUsuarioCandidato = new javax.swing.JFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
         ta_publicar = new javax.swing.JTextArea();
@@ -28,13 +27,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         mi_modificardatos = new javax.swing.JMenuItem();
-
-        FrameBuscarCandidatos = new javax.swing.JFrame();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        ListaBuscarCandidatos = new javax.swing.JList<>();
-        btnseguirCandidato = new javax.swing.JButton();
-        jFrame1 = new javax.swing.JFrame();
-
         jd_registrar = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -60,12 +52,11 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -111,7 +102,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         bt_RegreModDatos1 = new javax.swing.JButton();
         btnRegistro1 = new javax.swing.JButton();
         btnIniciarSesion1 = new javax.swing.JButton();
-
 
         FrameUsuarioCandidato.setBounds(new java.awt.Rectangle(600, 100, 800, 600));
         FrameUsuarioCandidato.setName("FrameUsuarioCandidado"); // NOI18N
@@ -173,44 +163,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pb_votos, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
-
-        FrameBuscarCandidatos.setPreferredSize(new java.awt.Dimension(600, 500));
-        FrameBuscarCandidatos.setSize(new java.awt.Dimension(600, 500));
-
-        jScrollPane4.setViewportView(ListaBuscarCandidatos);
-
-        btnseguirCandidato.setText("Seguir");
-
-        javax.swing.GroupLayout FrameBuscarCandidatosLayout = new javax.swing.GroupLayout(FrameBuscarCandidatos.getContentPane());
-        FrameBuscarCandidatos.getContentPane().setLayout(FrameBuscarCandidatosLayout);
-        FrameBuscarCandidatosLayout.setHorizontalGroup(
-            FrameBuscarCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FrameBuscarCandidatosLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(btnseguirCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
-        FrameBuscarCandidatosLayout.setVerticalGroup(
-            FrameBuscarCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FrameBuscarCandidatosLayout.createSequentialGroup()
-                .addGroup(FrameBuscarCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FrameBuscarCandidatosLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(FrameBuscarCandidatosLayout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(btnseguirCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-
         );
         FrameUsuarioCandidatoLayout.setVerticalGroup(
             FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,10 +216,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
             .addGroup(jd_registrarLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_registrarLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jd_registrarLayout.createSequentialGroup()
                             .addComponent(jLabel2)
@@ -288,10 +236,16 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel5))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(tf_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(tf_correoelectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(dc_fechadenacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jd_registrarLayout.createSequentialGroup()
+                                    .addComponent(dc_fechadenacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(2, 2, 2)))))
+                    .addGroup(jd_registrarLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         jd_registrarLayout.setVerticalGroup(
@@ -309,7 +263,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(15, 15, 15)
                 .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
                     .addComponent(dc_fechadenacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -358,9 +312,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
         FrameUsuarioComun.setTitle("Usuario Comun");
         FrameUsuarioComun.setAlwaysOnTop(true);
-        FrameUsuarioComun.setMaximumSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setMinimumSize(new java.awt.Dimension(800, 650));
-        FrameUsuarioComun.setPreferredSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setResizable(false);
 
         jScrollPane1.setViewportView(jList1);
@@ -372,10 +324,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jLabel17.setText("Amigos");
 
         jButton3.setText("Cargar Acta");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
 
         jMenu1.setText("Datos");
 
@@ -390,6 +338,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Candidatos");
+
+        jMenuItem2.setText("Publicaciones Candidatos");
+        jMenu2.add(jMenuItem2);
 
         jMenuItem4.setText("Candidatos");
         jMenu2.add(jMenuItem4);
@@ -425,19 +376,16 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                         .addGap(623, 623, 623)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
-                        .addGroup(FrameUsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(43, 43, 43)
-                        .addGroup(FrameUsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(FrameUsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(122, 122, 122)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(183, 183, 183)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
+                        .addGap(575, 575, 575)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
+                        .addGap(556, 556, 556)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         FrameUsuarioComunLayout.setVerticalGroup(
@@ -448,22 +396,15 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(FrameUsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel16)
-                        .addGap(11, 11, 11)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(FrameUsuarioComunLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel16)
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(60, Short.MAX_VALUE))
         );
-
-
-        FrameModDatos.setSize(new java.awt.Dimension(500, 500));
-
 
         jLabel10.setText("Usuario");
 
@@ -556,10 +497,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addComponent(btnRegresarModDatos)
                 .addContainerGap())
         );
-
-
-        FrameIniciarSesion.setSize(new java.awt.Dimension(500, 500));
-
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Contrasena: ");
@@ -707,9 +644,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 300, 300));
         setMinimumSize(new java.awt.Dimension(300, 300));
-
-        setSize(new java.awt.Dimension(300, 300));
-
 
         btnRegistro1.setText("Registrarse");
         btnRegistro1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -873,21 +807,15 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFrame FrameBuscarCandidatos;
     private javax.swing.JFrame FrameIniciarSesion;
     private javax.swing.JFrame FrameModDatos;
     private javax.swing.JFrame FrameUsuarioCandidato;
     private javax.swing.JFrame FrameUsuarioComun;
-
     private javax.swing.JButton b_publicar;
     private javax.swing.JButton bt_RegreModDatos1;
-
-    private javax.swing.JList<String> ListaBuscarCandidatos;
-
     private javax.swing.JButton btnIniciarSesion1;
     private javax.swing.JButton btnRegistro1;
     private javax.swing.JButton btnRegresarModDatos;
-    private javax.swing.JButton btnseguirCandidato;
     private com.toedter.calendar.JDateChooser dc_fechadenacimiento;
     private javax.swing.JButton jB_LogIn;
     private javax.swing.JButton jB_Registro;
@@ -931,6 +859,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -938,12 +867,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-
     private javax.swing.JDialog jd_ModUsuarioCandidato;
-
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-
     private javax.swing.JDialog jd_registrar;
     private javax.swing.JDialog jd_test;
     private javax.swing.JPasswordField log_password;
