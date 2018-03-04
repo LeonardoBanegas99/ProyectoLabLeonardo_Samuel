@@ -17,11 +17,24 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
+        FrameUsuarioCandidato = new javax.swing.JFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ta_publicar = new javax.swing.JTextArea();
+        b_publicar = new javax.swing.JButton();
+        pb_votos = new javax.swing.JProgressBar();
+        jLabel18 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        mi_modificardatos = new javax.swing.JMenuItem();
+
         FrameBuscarCandidatos = new javax.swing.JFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         ListaBuscarCandidatos = new javax.swing.JList<>();
         btnseguirCandidato = new javax.swing.JButton();
         jFrame1 = new javax.swing.JFrame();
+
         jd_registrar = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -81,8 +94,85 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         log_password = new javax.swing.JPasswordField();
         jB_LogIn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jd_ModUsuarioCandidato = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        tf_ModUsuario1 = new javax.swing.JTextField();
+        tf_ModContra1 = new javax.swing.JTextField();
+        tf_ModFecNaci1 = new javax.swing.JTextField();
+        tf_ModCorreo1 = new javax.swing.JTextField();
+        tf_ModSexo1 = new javax.swing.JTextField();
+        tf_ModNombre1 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        bt_RegreModDatos1 = new javax.swing.JButton();
         btnRegistro1 = new javax.swing.JButton();
         btnIniciarSesion1 = new javax.swing.JButton();
+
+
+        FrameUsuarioCandidato.setBounds(new java.awt.Rectangle(600, 100, 800, 600));
+        FrameUsuarioCandidato.setName("FrameUsuarioCandidado"); // NOI18N
+        FrameUsuarioCandidato.setPreferredSize(new java.awt.Dimension(800, 600));
+
+        ta_publicar.setColumns(20);
+        ta_publicar.setRows(5);
+        jScrollPane3.setViewportView(ta_publicar);
+
+        b_publicar.setText("Publicar");
+
+        pb_votos.setMaximum(180000);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel18.setText("Porcentaje de votos");
+
+        jButton5.setText("Cerrar Sesion");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jMenu5.setText("Datos");
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
+
+        mi_modificardatos.setText("Modificar Datos");
+        mi_modificardatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_modificardatosActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mi_modificardatos);
+
+        jMenuBar2.add(jMenu5);
+
+        FrameUsuarioCandidato.setJMenuBar(jMenuBar2);
+
+        javax.swing.GroupLayout FrameUsuarioCandidatoLayout = new javax.swing.GroupLayout(FrameUsuarioCandidato.getContentPane());
+        FrameUsuarioCandidato.getContentPane().setLayout(FrameUsuarioCandidatoLayout);
+        FrameUsuarioCandidatoLayout.setHorizontalGroup(
+            FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FrameUsuarioCandidatoLayout.createSequentialGroup()
+                .addGroup(FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, FrameUsuarioCandidatoLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jButton5)
+                            .addGap(351, 351, 351)
+                            .addComponent(b_publicar))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, FrameUsuarioCandidatoLayout.createSequentialGroup()
+                            .addGap(59, 59, 59)
+                            .addComponent(jLabel18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pb_votos, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(19, Short.MAX_VALUE))
 
         FrameBuscarCandidatos.setPreferredSize(new java.awt.Dimension(600, 500));
         FrameBuscarCandidatos.setSize(new java.awt.Dimension(600, 500));
@@ -120,13 +210,26 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jFrame1Layout.setHorizontalGroup(
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
-        jd_registrar.setSize(new java.awt.Dimension(500, 500));
+        );
+        FrameUsuarioCandidatoLayout.setVerticalGroup(
+            FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameUsuarioCandidatoLayout.createSequentialGroup()
+                .addGroup(FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FrameUsuarioCandidatoLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(pb_votos, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FrameUsuarioCandidatoLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel18)))
+                .addGap(75, 75, 75)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_publicar)
+                    .addComponent(jButton5))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
 
         jLabel1.setText("Usuario: ");
 
@@ -140,7 +243,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
         jLabel6.setText("Nombre Completo: ");
 
-        jC_Usuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuario Comun", "Usuario Candidato", " " }));
+        jC_Usuarios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuario Comun", "Usuario Candidato" }));
 
         jB_Registro.setText("Registrar");
         jB_Registro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,12 +358,10 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
         FrameUsuarioComun.setTitle("Usuario Comun");
         FrameUsuarioComun.setAlwaysOnTop(true);
-        FrameUsuarioComun.setLocation(new java.awt.Point(600, 100));
         FrameUsuarioComun.setMaximumSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setMinimumSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setPreferredSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setResizable(false);
-        FrameUsuarioComun.setSize(new java.awt.Dimension(800, 650));
 
         jScrollPane1.setViewportView(jList1);
 
@@ -360,7 +461,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
+
         FrameModDatos.setSize(new java.awt.Dimension(500, 500));
+
 
         jLabel10.setText("Usuario");
 
@@ -454,7 +557,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+
         FrameIniciarSesion.setSize(new java.awt.Dimension(500, 500));
+
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Contrasena: ");
@@ -511,13 +616,100 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addGap(29, 29, 29)
                 .addComponent(jB_LogIn)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
+        );
+
+        jLabel19.setText("Usuario");
+
+        jLabel20.setText("Contrasena");
+
+        jLabel21.setText("Fecha de Nacimineto");
+
+        jLabel22.setText("Correo");
+
+        jLabel23.setText("Sexo");
+
+        jLabel24.setText("Nombre Completo");
+
+        tf_ModUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_ModUsuario1ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Modificar Datos");
+
+        bt_RegreModDatos1.setText("jButton5");
+
+        javax.swing.GroupLayout jd_ModUsuarioCandidatoLayout = new javax.swing.GroupLayout(jd_ModUsuarioCandidato.getContentPane());
+        jd_ModUsuarioCandidato.getContentPane().setLayout(jd_ModUsuarioCandidatoLayout);
+        jd_ModUsuarioCandidatoLayout.setHorizontalGroup(
+            jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_ModUsuarioCandidatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel23))
+                .addGap(40, 40, 40)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(tf_ModUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                        .addComponent(tf_ModContra1)
+                        .addComponent(tf_ModFecNaci1)
+                        .addComponent(tf_ModCorreo1)
+                        .addComponent(tf_ModSexo1)
+                        .addComponent(tf_ModNombre1)))
+                .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_ModUsuarioCandidatoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_RegreModDatos1)
+                .addGap(20, 20, 20))
+        );
+        jd_ModUsuarioCandidatoLayout.setVerticalGroup(
+            jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_ModUsuarioCandidatoLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_ModUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_ModContra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(tf_ModFecNaci1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(tf_ModCorreo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(tf_ModSexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_ModUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(tf_ModNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt_RegreModDatos1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 300, 300));
         setMinimumSize(new java.awt.Dimension(300, 300));
+
         setSize(new java.awt.Dimension(300, 300));
+
 
         btnRegistro1.setText("Registrarse");
         btnRegistro1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -564,8 +756,13 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
     private void jB_RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_RegistroMouseClicked
         // TODO add your handling code here:
-        usuario.add(new Usuarios(this.tf_usuario.getText(), this.tf_contrasena.getText(), this.dc_fechadenacimiento.getDate(),
+        if (((String) jC_Usuarios.getSelectedItem()).equalsIgnoreCase("Usuario Comun")) {
+            usuario.add(new UsuarioComun(this.tf_usuario.getText(), this.tf_contrasena.getText(), this.dc_fechadenacimiento.getDate(),
                 this.tf_correoelectronico.getText(), this.tf_sexo.getText(), this.tf_nombre.getText()));
+        }else if(((String) jC_Usuarios.getSelectedItem()).equalsIgnoreCase("Usuario Candidato")){
+            usuario.add(new UsuarioCandidato(this.tf_usuario.getText(), this.tf_contrasena.getText(), this.dc_fechadenacimiento.getDate(),
+                this.tf_correoelectronico.getText(), this.tf_sexo.getText(), this.tf_nombre.getText()));
+        }
         JOptionPane.showMessageDialog(this, "Guardado con exito");
         jd_registrar.setVisible(false);
         ProyectoLabGUI.this.setVisible(true);
@@ -608,15 +805,41 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
     private void jB_LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_LogInMouseClicked
         if (this.usuarioex(this.log_usuario.getText()) && this.contra(this.log_password.getText(), log_usuario.getText())) {
-            jd_test.pack();
-            jd_test.setLocationRelativeTo(null);
-            jd_test.setVisible(true);
-            FrameIniciarSesion.setVisible(false);
-            FrameUsuarioComun.setVisible(true);
+            if(log instanceof UsuarioComun){
+                FrameUsuarioComun.pack();
+                FrameUsuarioComun.setLocationRelativeTo(null);
+                FrameUsuarioComun.setVisible(true);
+                FrameIniciarSesion.setVisible(false);
+            }else if(log instanceof UsuarioCandidato){
+                FrameUsuarioCandidato.pack();
+                FrameUsuarioCandidato.setLocationRelativeTo(null);
+                FrameUsuarioCandidato.setVisible(true);
+                FrameIniciarSesion.setVisible(false);
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Usuario / Contraseña incorrecta");
         }
     }//GEN-LAST:event_jB_LogInMouseClicked
+
+    private void mi_modificardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_modificardatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mi_modificardatosActionPerformed
+
+    private void tf_ModUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_ModUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_ModUsuario1ActionPerformed
+
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        // TODO add your handling code here:
+        jd_ModUsuarioCandidato.setVisible(true);
+        FrameUsuarioCandidato.setVisible(false);
+    }//GEN-LAST:event_jMenu5ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        FrameUsuarioCandidato.setVisible(false);
+        FrameIniciarSesion.setVisible(true);
+    }//GEN-LAST:event_jButton5MouseClicked
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -653,8 +876,14 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JFrame FrameBuscarCandidatos;
     private javax.swing.JFrame FrameIniciarSesion;
     private javax.swing.JFrame FrameModDatos;
+    private javax.swing.JFrame FrameUsuarioCandidato;
     private javax.swing.JFrame FrameUsuarioComun;
+
+    private javax.swing.JButton b_publicar;
+    private javax.swing.JButton bt_RegreModDatos1;
+
     private javax.swing.JList<String> ListaBuscarCandidatos;
+
     private javax.swing.JButton btnIniciarSesion1;
     private javax.swing.JButton btnRegistro1;
     private javax.swing.JButton btnRegresarModDatos;
@@ -665,8 +894,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox jC_Usuarios;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -676,7 +906,14 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -690,7 +927,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -699,18 +938,31 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+
+    private javax.swing.JDialog jd_ModUsuarioCandidato;
+
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea1;
+
     private javax.swing.JDialog jd_registrar;
     private javax.swing.JDialog jd_test;
     private javax.swing.JPasswordField log_password;
     private javax.swing.JTextField log_usuario;
+    private javax.swing.JMenuItem mi_modificardatos;
+    private javax.swing.JProgressBar pb_votos;
+    private javax.swing.JTextArea ta_publicar;
     private javax.swing.JTextField tf_ModContra;
+    private javax.swing.JTextField tf_ModContra1;
     private javax.swing.JTextField tf_ModCorreo;
+    private javax.swing.JTextField tf_ModCorreo1;
+    private javax.swing.JTextField tf_ModFecNaci1;
     private javax.swing.JTextField tf_ModFechaNac;
     private javax.swing.JTextField tf_ModNombre;
+    private javax.swing.JTextField tf_ModNombre1;
     private javax.swing.JTextField tf_ModSexo;
+    private javax.swing.JTextField tf_ModSexo1;
     private javax.swing.JTextField tf_ModUsuario;
+    private javax.swing.JTextField tf_ModUsuario1;
     private javax.swing.JPasswordField tf_contrasena;
     private javax.swing.JTextField tf_correoelectronico;
     private javax.swing.JTextField tf_nombre;
