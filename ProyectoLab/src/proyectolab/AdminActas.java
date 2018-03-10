@@ -18,7 +18,7 @@ public class AdminActas {
         this.direccion = direccion;
     }
 
-    public void leerArchivo() throws IOException {
+    public String leerArchivo() throws IOException {
         FileReader fr = null;
         BufferedReader bf = null;
         votos = "";
@@ -27,7 +27,7 @@ public class AdminActas {
             fr = new FileReader(direccion);
             bf = new BufferedReader(fr);
             String s;
-            while((s= bf.readLine()) != null){
+            while ((s = bf.readLine()) != null) {
                 String[] token = s.split(";");
                 for (int i = 0; i < token.length; i++) {
                     votos += token[i] + "\n";
@@ -38,7 +38,7 @@ public class AdminActas {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminActas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        return votos;
     }
 
     public String getVotos() {
