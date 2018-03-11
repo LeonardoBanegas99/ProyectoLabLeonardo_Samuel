@@ -6,7 +6,7 @@ import java.util.Date;
 public class Usuarios {
     private String usuario;
     private String contrasena;
-    private Date fechadenacimiento;//*
+    private Date fechadenacimiento;
     private String correoelectronico;
     private String sexo;
     private String nombre;
