@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -60,7 +61,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         FrameUsuarioComun = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        ListaAmigos = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
         jLabel16 = new javax.swing.JLabel();
@@ -138,6 +139,10 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         tf_marlenealvarenga = new javax.swing.JTextField();
         tf_JOH = new javax.swing.JTextField();
         btn_GuardarResultados = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        FrameAmigos = new javax.swing.JFrame();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ListaUsuariosComunes = new javax.swing.JList<>();
         btnRegistro1 = new javax.swing.JButton();
         btnIniciarSesion1 = new javax.swing.JButton();
 
@@ -357,7 +362,8 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         FrameUsuarioComun.setMinimumSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setResizable(false);
 
-        jScrollPane1.setViewportView(jList1);
+        ListaAmigos.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(ListaAmigos);
 
         jScrollPane2.setViewportView(jList2);
 
@@ -402,6 +408,11 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jMenu3.setText("Amigos");
 
         jMenuItem3.setText("Agregar Amigos");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -733,6 +744,13 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Regresar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout FrameActasLayout = new javax.swing.GroupLayout(FrameActas.getContentPane());
         FrameActas.getContentPane().setLayout(FrameActasLayout);
         FrameActasLayout.setHorizontalGroup(
@@ -771,6 +789,10 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_GuardarResultados)
                         .addGap(157, 157, 157))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameActasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
         );
         FrameActasLayout.setVerticalGroup(
             FrameActasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,7 +842,33 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                             .addComponent(tf_JOH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addComponent(btn_GuardarResultados)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
+        );
+
+        FrameAmigos.setPreferredSize(new java.awt.Dimension(800, 600));
+        FrameAmigos.setSize(new java.awt.Dimension(800, 600));
+
+        ListaUsuariosComunes.setModel(new DefaultListModel());
+        ListaUsuariosComunes.setToolTipText("");
+        jScrollPane6.setViewportView(ListaUsuariosComunes);
+
+        javax.swing.GroupLayout FrameAmigosLayout = new javax.swing.GroupLayout(FrameAmigos.getContentPane());
+        FrameAmigos.getContentPane().setLayout(FrameAmigosLayout);
+        FrameAmigosLayout.setHorizontalGroup(
+            FrameAmigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FrameAmigosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(447, Short.MAX_VALUE))
+        );
+        FrameAmigosLayout.setVerticalGroup(
+            FrameAmigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameAmigosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -926,6 +974,8 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 FrameUsuarioComun.setLocationRelativeTo(null);
                 FrameUsuarioComun.setVisible(true);
                 FrameIniciarSesion.setVisible(false);
+                
+                cargarLista();
                 cargarPublicaciones();
             } else if (log instanceof UsuarioCandidato) {
                 FrameUsuarioCandidato.pack();
@@ -1009,42 +1059,52 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         int marlene = Integer.parseInt(tf_marlenealvarenga.getText());
         int joh = Integer.parseInt(tf_JOH.getText());
 
+//1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,
         File archivo = null;
-        File archivo2 = null;
         FileWriter fw = null;
         BufferedWriter bw = null;
-        int[] s = new int[18];
+        int[] s = new int[9];
+        String nuevosresultados = "";
+
         try {
             archivo = new File("./src\\Resultados\\Results.txt");
-            fw = new FileWriter(archivo);
-            bw = new BufferedWriter(fw);
             sc = new Scanner(archivo);
             sc.useDelimiter(",");
             int cont = 0;
-            while (sc.hasNext()) {
+            String l = "";
+            for (int i = 0; i < 9; i++) {
                 sc.nextInt();
-                s[cont] = sc.nextInt();
-                cont++;
+                s[i] = sc.nextInt();
+                l = l + s[i];
             }
-            String nuevosresultados = "";
-            s[1] = s[1] + josealfonso;
-            s[3] = s[1] + salvadornasralla;
-            s[5] = s[1] + eliseo;
-            s[7] = s[1] + lucas;
-            s[9] = s[1] + luiszelaya;
-            s[11] = s[1] + romeo;
-            s[13] = s[1] + isaias;
-            s[15] = s[1] + marlene;
-            s[17] = s[1] + joh;
-            for (int i = 1; i < 18; i = i + 2) {
-                nuevosresultados = nuevosresultados + s[1] + ",";
+            s[0] = s[0] + josealfonso;
+            s[1] = s[1] + salvadornasralla;
+            s[2] = s[2] + eliseo;
+            s[3] = s[3] + lucas;
+            s[4] = s[4] + luiszelaya;
+            s[5] = s[5] + romeo;
+            s[6] = s[6] + isaias;
+            s[7] = s[7] + marlene;
+            s[8] = s[8] + joh;
+            int conteo = 1;
+            for (int i = 0; i < 9; i++) {
+                nuevosresultados = nuevosresultados + conteo + "," + s[i] + ",";
+                conteo++;
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            archivo = new File("./src\\Resultados\\Results.txt");
+            fw = new FileWriter(archivo, false);
+            bw = new BufferedWriter(fw);
             bw.write(nuevosresultados);
             bw.flush();
             JOptionPane.showMessageDialog(this, "Archivo guardado exitosamente");
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         try {
             bw.close();
             fw.close();
@@ -1052,9 +1112,26 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         } catch (IOException ex) {
 
         }
-
+        tf_JoseAlfonsoDiaz.setText("");
+        tf_SalvadorNasralla.setText("");
+        tf_EliseoVallecillo.setText("");
+        tf_Lucas.setText("");
+        tf_LuisZelaya.setText("");
+        tf_Romeo.setText("");
+        tf_isaias.setText("");
+        tf_marlenealvarenga.setText("");
+        tf_JOH.setText("");
 
     }//GEN-LAST:event_btn_GuardarResultadosMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        FrameUsuarioComun.setVisible(true);
+        FrameActas.setVisible(false);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void b_publicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_publicarMouseClicked
         // TODO add your handling code here:
@@ -1161,10 +1238,13 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame FrameActas;
+    private javax.swing.JFrame FrameAmigos;
     private javax.swing.JFrame FrameIniciarSesion;
     private javax.swing.JFrame FrameModDatos;
     private javax.swing.JFrame FrameUsuarioCandidato;
     private javax.swing.JFrame FrameUsuarioComun;
+    private javax.swing.JList<String> ListaAmigos;
+    private javax.swing.JList<String> ListaUsuariosComunes;
     private javax.swing.JButton b_publicar;
     private javax.swing.JButton bt_RegreModDatos1;
     private javax.swing.JButton btnCargarActas;
@@ -1177,6 +1257,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JButton jB_Registro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox jC_Usuarios;
@@ -1213,7 +1294,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -1233,6 +1313,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTree jTree1;
     private javax.swing.JDialog jd_ModUsuarioCandidato;
@@ -1499,6 +1580,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         return false;
     }
 
+    private void cargarLista() {
+        DefaultListModel modeloamigos = (DefaultListModel) ListaAmigos.getModel();
+        
     public void cargarPublicaciones() {
         if (log instanceof UsuarioComun) {
             for (UsuarioCandidato t : ((UsuarioComun) log).getCandidato()) {
