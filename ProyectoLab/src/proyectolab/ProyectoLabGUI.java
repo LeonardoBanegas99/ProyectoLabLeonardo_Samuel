@@ -154,6 +154,11 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         jScrollPane3.setViewportView(ta_publicar);
 
         b_publicar.setText("Publicar");
+        b_publicar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_publicarMouseClicked(evt);
+            }
+        });
 
         pb_votos.setMaximum(180000);
 
@@ -356,7 +361,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         FrameUsuarioComun.setAlwaysOnTop(true);
         FrameUsuarioComun.setMinimumSize(new java.awt.Dimension(800, 650));
         FrameUsuarioComun.setResizable(false);
-        FrameUsuarioComun.setSize(new java.awt.Dimension(800, 650));
 
         ListaAmigos.setModel(new DefaultListModel());
         jScrollPane1.setViewportView(ListaAmigos);
@@ -701,7 +705,6 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         );
 
         FrameActas.setResizable(false);
-        FrameActas.setSize(new java.awt.Dimension(1200, 600));
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("JTree");
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
@@ -973,6 +976,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 FrameIniciarSesion.setVisible(false);
                 
                 cargarLista();
+                cargarPublicaciones();
             } else if (log instanceof UsuarioCandidato) {
                 FrameUsuarioCandidato.pack();
                 FrameUsuarioCandidato.setLocationRelativeTo(null);
@@ -1128,6 +1132,39 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void b_publicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_publicarMouseClicked
+        // TODO add your handling code here:
+        if(log_usuario.getText().equalsIgnoreCase("salvadornasralla")){
+            puSalvador.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("romeovasquez")){
+            puRomeo.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("marlenealvarenga")){
+            puMarlene.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("luiszelaya")){
+            puLuis.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("lucasevangelisto")){
+            puLucas.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("juanorlando")){
+            puJOH.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("josealfonzo")){
+            puJoseAlfonzo.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("isaiasfonseca")){
+            puIsaias.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }else if(log_usuario.getText().equalsIgnoreCase("eliseovallecillo")){
+            puEliseo.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+            escribirPublicaciones();
+        }
+        
+    }//GEN-LAST:event_b_publicarMouseClicked
     public File obtenerRuta(DefaultMutableTreeNode p) {
         String ruta = "";
         for (int i = 0; i < p.getPath().length - 1; i++) {
@@ -1316,6 +1353,213 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuarios> usuario = new ArrayList();
     Usuarios log;
+    ArrayList<Publicaciones> puEliseo = new ArrayList();
+    ArrayList<Publicaciones> puIsaias = new ArrayList();
+    ArrayList<Publicaciones> puJoseAlfonzo = new ArrayList();
+    ArrayList<Publicaciones> puJOH = new ArrayList();
+    ArrayList<Publicaciones> puLucas = new ArrayList();
+    ArrayList<Publicaciones> puLuis = new ArrayList();
+    ArrayList<Publicaciones> puMarlene = new ArrayList();
+    ArrayList<Publicaciones> puRomeo = new ArrayList();
+    ArrayList<Publicaciones> puSalvador = new ArrayList();
+    public void escribirPublicaciones(){
+        if (log_usuario.getText().equalsIgnoreCase("salvadornasralla")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\SalvadorNasralla.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puSalvador) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+            } catch (Exception e) {
+
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+        } else if (log_usuario.getText().equalsIgnoreCase("romeovasquez")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\RomeoVasquez.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puRomeo) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("marlenealvarenga")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\MarleneAlvarenga.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puMarlene) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("luiszelaya")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\LuisZelaya.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puLuis) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+
+                }
+                bw.flush();
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("lucasevangelisto")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\LucasEvangelisto.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puLucas) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("juanorlando")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\JuanOrlandoHernandez.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puJOH) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("josealfonzo")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\JoseAlfonzoDiaz.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puJoseAlfonzo) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("isaiasfonseca")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\IsaiasFonseca.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puIsaias) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+
+        } else if (log_usuario.getText().equalsIgnoreCase("eliseovallecillo")) {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter("./src\\Publicaciones\\EliseoVallecillo.txt", true);
+                bw = new BufferedWriter(fw);
+                for (Publicaciones t : puEliseo) {
+                    bw.write(t.getEmisor() + ";");
+                    bw.newLine();
+                    bw.write(t.getCuerpo() + ";");
+                    bw.newLine();
+                }
+                bw.flush();
+
+            } catch (Exception e) {
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+    }
 
     public boolean usuarioex(String log) {
         for (Usuarios user : usuario) {
@@ -1339,5 +1583,150 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private void cargarLista() {
         DefaultListModel modeloamigos = (DefaultListModel) ListaAmigos.getModel();
         
+    public void cargarPublicaciones() {
+        if (log instanceof UsuarioComun) {
+            for (UsuarioCandidato t : ((UsuarioComun) log).getCandidato()) {
+                if (t.getNombre().equalsIgnoreCase("salvadornasralla")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\SalvadorNasralla.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puSalvador.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("romeovasquez")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\RomeoVasquez.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puRomeo.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("marlenealvarenga")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\MarleneAlvarenga.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puMarlene.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("luiszelaya")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\LuisZelaya.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puLuis.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("lucasevangelisto")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\LucasEvangelisto.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puLucas.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("juanorlando")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\JuanOrlandoHernandez.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puJOH.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+
+                } else if (t.getNombre().equalsIgnoreCase("josealfonzo")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\JoseAlfonzoDiaz.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puJoseAlfonzo.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("isaiasfonseca")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\IsaiasFonseca.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puIsaias.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+                } else if (t.getNombre().equalsIgnoreCase("eliseovallecillo")) {
+                    Scanner sc = null;
+                    File archivo = new File("./src\\Publicaciones\\EliseoVallecillo.txt");
+                    try {
+                        sc = new Scanner(archivo);
+                        while (sc.hasNextLine()) {
+                            String emisor, cuerpo;
+                            emisor = sc.nextLine();
+                            cuerpo = sc.nextLine();
+                            puEliseo.add(new Publicaciones(emisor, cuerpo));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    sc.close();
+
+                }
+            }
+
+        }
+
     }
 }

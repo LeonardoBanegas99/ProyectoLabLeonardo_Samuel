@@ -80,6 +80,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Publicar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b_publicarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JProgressBar" name="pb_votos">
           <Properties>
@@ -333,9 +336,6 @@
           <Dimension value="[800, 650]"/>
         </Property>
         <Property name="resizable" type="boolean" value="false"/>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[800, 650]"/>
-        </Property>
       </Properties>
 
       <Layout>
@@ -900,9 +900,6 @@
     <Container class="javax.swing.JFrame" name="FrameActas">
       <Properties>
         <Property name="resizable" type="boolean" value="false"/>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1200, 600]"/>
-        </Property>
       </Properties>
 
       <Layout>
