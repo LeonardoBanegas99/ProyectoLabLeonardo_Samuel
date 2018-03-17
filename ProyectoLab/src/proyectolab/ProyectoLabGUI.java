@@ -974,7 +974,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 FrameUsuarioComun.setLocationRelativeTo(null);
                 FrameUsuarioComun.setVisible(true);
                 FrameIniciarSesion.setVisible(false);
-                
+
                 cargarLista();
                 cargarPublicaciones();
             } else if (log instanceof UsuarioCandidato) {
@@ -1130,40 +1130,40 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void b_publicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_publicarMouseClicked
         // TODO add your handling code here:
-        if(log_usuario.getText().equalsIgnoreCase("salvadornasralla")){
-            puSalvador.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        if (log_usuario.getText().equalsIgnoreCase("salvadornasralla")) {
+            puSalvador.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("romeovasquez")){
-            puRomeo.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("romeovasquez")) {
+            puRomeo.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("marlenealvarenga")){
-            puMarlene.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("marlenealvarenga")) {
+            puMarlene.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("luiszelaya")){
-            puLuis.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("luiszelaya")) {
+            puLuis.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("lucasevangelisto")){
-            puLucas.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("lucasevangelisto")) {
+            puLucas.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("juanorlando")){
-            puJOH.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("juanorlando")) {
+            puJOH.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("josealfonzo")){
-            puJoseAlfonzo.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("josealfonzo")) {
+            puJoseAlfonzo.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("isaiasfonseca")){
-            puIsaias.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("isaiasfonseca")) {
+            puIsaias.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
-        }else if(log_usuario.getText().equalsIgnoreCase("eliseovallecillo")){
-            puEliseo.add(new Publicaciones(log_usuario.getText(),ta_publicar.getText()));
+        } else if (log_usuario.getText().equalsIgnoreCase("eliseovallecillo")) {
+            puEliseo.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
         }
-        
+
     }//GEN-LAST:event_b_publicarMouseClicked
     public File obtenerRuta(DefaultMutableTreeNode p) {
         String ruta = "";
@@ -1362,7 +1362,8 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     ArrayList<Publicaciones> puMarlene = new ArrayList();
     ArrayList<Publicaciones> puRomeo = new ArrayList();
     ArrayList<Publicaciones> puSalvador = new ArrayList();
-    public void escribirPublicaciones(){
+
+    public void escribirPublicaciones() {
         if (log_usuario.getText().equalsIgnoreCase("salvadornasralla")) {
             FileWriter fw = null;
             BufferedWriter bw = null;
@@ -1581,8 +1582,13 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     }
 
     private void cargarLista() {
-        DefaultListModel modeloamigos = (DefaultListModel) ListaAmigos.getModel();
-        
+        DefaultListModel modeloamigos = (DefaultListModel) ListaUsuariosComunes.getModel();
+        for (int i = 0; i < usuario.size(); i++) {
+            modeloamigos.addElement(usuario.get(i));
+        }
+        ListaUsuariosComunes.setModel(modeloamigos);
+    }
+
     public void cargarPublicaciones() {
         if (log instanceof UsuarioComun) {
             for (UsuarioCandidato t : ((UsuarioComun) log).getCandidato()) {
