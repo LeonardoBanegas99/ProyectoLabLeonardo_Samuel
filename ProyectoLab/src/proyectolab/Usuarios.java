@@ -1,9 +1,9 @@
 package proyectolab;
 
-
 import java.util.Date;
 
 public class Usuarios {
+
     private String usuario;
     private String contrasena;
     private Date fechadenacimiento;
@@ -73,9 +73,7 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "Usuarios{" + "usuario=" + usuario + ", contrasena=" + contrasena + ", fechadenacimiento=" + fechadenacimiento + ", correoelectronico=" + correoelectronico + ", sexo=" + sexo + ", nombre=" + nombre + '}';
+        return "@" + usuario + ", nombre=" + nombre;
     }
-    
-    
-    
+
 }

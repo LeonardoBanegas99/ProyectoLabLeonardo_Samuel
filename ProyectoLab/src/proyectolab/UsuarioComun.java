@@ -56,7 +56,7 @@ public class UsuarioComun extends Usuarios {
 
     @Override
     public String toString() {
-        return "UsuarioComun{" + "direccion=" + direccion + ", mensaje=" + mensaje + ", candidato=" + candidatoseguidos + ", amigos=" + amigos + '}';
+        return super.toString();
     }
 
 }

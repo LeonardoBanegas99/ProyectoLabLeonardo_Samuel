@@ -50,7 +50,7 @@ public class Mensaje {
 
     @Override
     public String toString() {
-        return "Mensaje{" + "emisor=" + emisor + ", receptor=" + receptor + ", titulo=" + titulo + ", cuerpo=" + cuerpo + '}';
+        return "Emisor: " + emisor + ", titulo : " + titulo;
     }
     
 }
