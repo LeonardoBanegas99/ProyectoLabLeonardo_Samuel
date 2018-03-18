@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +27,11 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     
     public ProyectoLabGUI() {
         initComponents();
+        usuario.add(new UsuarioCandidato(3,"juanorlando",  "123", null, null,null, null));
+        candi.escribirArchivo();
+        candi.cargarArchivo();
+        System.out.println(candi.getCandidatos());
+        
         // votos();
     }
     
@@ -40,6 +46,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         pb_votos = new javax.swing.JProgressBar();
         jLabel18 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jlb = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         mi_modificardatos = new javax.swing.JMenuItem();
@@ -195,6 +202,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         });
 
         pb_votos.setMaximum(180000);
+        pb_votos.setStringPainted(true);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel18.setText("Porcentaje de votos");
@@ -205,6 +213,8 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 jButton5MouseClicked(evt);
             }
         });
+
+        jlb.setText("jLabel34");
 
         jMenu5.setText("Datos");
         jMenu5.addActionListener(new java.awt.event.ActionListener() {
@@ -240,9 +250,12 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                             .addComponent(b_publicar))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, FrameUsuarioCandidatoLayout.createSequentialGroup()
                             .addGap(59, 59, 59)
-                            .addComponent(jLabel18)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pb_votos, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jlb)
+                                .addGroup(FrameUsuarioCandidatoLayout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(pb_votos, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         FrameUsuarioCandidatoLayout.setVerticalGroup(
@@ -255,7 +268,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                     .addGroup(FrameUsuarioCandidatoLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(jLabel18)))
-                .addGap(75, 75, 75)
+                .addGap(20, 20, 20)
+                .addComponent(jlb)
+                .addGap(41, 41, 41)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addGroup(FrameUsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -649,19 +664,18 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addGroup(FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jB_LogIn)
                     .addGroup(FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(FrameIniciarSesionLayout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(58, 58, 58)
-                            .addComponent(log_password, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel7)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameIniciarSesionLayout.createSequentialGroup()
                             .addComponent(jLabel8)
-                            .addGap(18, 18, 18)
-                            .addComponent(log_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(194, 194, 194))))
                 .addContainerGap(140, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameIniciarSesionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(182, 182, 182))
+                .addGroup(FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(log_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(log_password, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(126, 126, 126))
         );
         FrameIniciarSesionLayout.setVerticalGroup(
             FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -669,13 +683,13 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addComponent(jLabel9)
                 .addGap(53, 53, 53)
+                .addGroup(FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(log_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
                 .addGroup(FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(log_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(21, 21, 21)
-                .addGroup(FrameIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(log_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(log_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jB_LogIn)
                 .addContainerGap(207, Short.MAX_VALUE))
@@ -908,6 +922,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addContainerGap())
         );
+
 
         FrameAmigos.setPreferredSize(new java.awt.Dimension(400, 600));
         FrameAmigos.setSize(new java.awt.Dimension(400, 600));
@@ -1213,7 +1228,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
             usuario.add(new UsuarioComun(this.tf_usuario.getText(), this.tf_contrasena.getText(), this.dc_fechadenacimiento.getDate(),
                     this.tf_correoelectronico.getText(), this.tf_sexo.getText(), this.tf_nombre.getText()));
         } else if (((String) jC_Usuarios.getSelectedItem()).equalsIgnoreCase("Usuario Candidato")) {
-            usuario.add(new UsuarioCandidato(this.tf_usuario.getText(), this.tf_contrasena.getText(), this.dc_fechadenacimiento.getDate(),
+            usuario.add(new UsuarioCandidato(1,this.tf_usuario.getText(), this.tf_contrasena.getText(), this.dc_fechadenacimiento.getDate(),
                     this.tf_correoelectronico.getText(), this.tf_sexo.getText(), this.tf_nombre.getText()));
         }
         JOptionPane.showMessageDialog(this, "Guardado con exito");
@@ -1249,6 +1264,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarModDatosMouseClicked
 
     private void btnRegistro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistro1MouseClicked
+       jd_registrar.pack();
         this.setVisible(false);
         jd_registrar.setVisible(true);
     }//GEN-LAST:event_btnRegistro1MouseClicked
@@ -1259,21 +1275,27 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
     private void btnIniciarSesion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSesion1MouseClicked
         this.setVisible(false);
+        FrameIniciarSesion.pack();
         FrameIniciarSesion.setVisible(true);
     }//GEN-LAST:event_btnIniciarSesion1MouseClicked
 
     private void jB_LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_LogInMouseClicked
+       
         if (this.usuarioex(this.log_usuario.getText()) && this.contra(this.log_password.getText(), log_usuario.getText())) {
             if (log instanceof UsuarioComun) {
                 FrameUsuarioComun.pack();
                 FrameUsuarioComun.setLocationRelativeTo(null);
                 FrameUsuarioComun.setVisible(true);
                 FrameIniciarSesion.setVisible(false);
-                
+              
+                cargarLista();
                 cargarListaUsuariosComunes();
+
                 cargarPublicaciones();
                 cargarAmigos();
             } else if (log instanceof UsuarioCandidato) {
+                BarradeVoto bar = new BarradeVoto(pb_votos,3,jlb);
+                bar.start();
                 FrameUsuarioCandidato.pack();
                 FrameUsuarioCandidato.setLocationRelativeTo(null);
                 FrameUsuarioCandidato.setVisible(true);
@@ -1286,6 +1308,9 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
 
     private void mi_modificardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_modificardatosActionPerformed
         // TODO add your handling code here:
+        jd_ModUsuarioCandidato.pack();
+        jd_ModUsuarioCandidato.setLocationRelativeTo(FrameUsuarioCandidato);
+        jd_ModUsuarioCandidato.setVisible(true);
     }//GEN-LAST:event_mi_modificardatosActionPerformed
 
     private void tf_ModUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_ModUsuario1ActionPerformed
@@ -1459,6 +1484,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
             puEliseo.add(new Publicaciones(log_usuario.getText(), ta_publicar.getText()));
             escribirPublicaciones();
         }
+        JOptionPane.showMessageDialog(FrameUsuarioCandidato, "PUBLICACIONES ENVIADA");
 
     }//GEN-LAST:event_b_publicarMouseClicked
 
@@ -1763,7 +1789,11 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JDialog jd_ModUsuarioCandidato;
     private javax.swing.JDialog jd_registrar;
     private javax.swing.JDialog jd_test;
+
+    private javax.swing.JLabel jlb;
+
     private javax.swing.JLabel lblTituloMensaje;
+
     private javax.swing.JPasswordField log_password;
     private javax.swing.JTextField log_usuario;
     private javax.swing.JMenuItem mi_modificardatos;
@@ -1803,6 +1833,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
     private javax.swing.JTextField tf_usuario;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuarios> usuario = new ArrayList();
+    UsuarioCandidato candi= new UsuarioCandidato();
     Usuarios log;
     ArrayList<Publicaciones> puEliseo = new ArrayList();
     ArrayList<Publicaciones> puIsaias = new ArrayList();
