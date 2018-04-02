@@ -11,13 +11,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class UsuarioCandidato extends Usuarios implements Serializable{
+public class UsuarioCandidato extends Usuarios {
     private ArrayList<UsuarioComun>seguidores = new ArrayList();
     private ArrayList<Publicaciones> publicaciones = new ArrayList();
     private ArrayList<String> certificaciones = new ArrayList();
     private int pos;
     private ArrayList<UsuarioCandidato>candidatos = new ArrayList();
-    private File archivo=null;
     
     public UsuarioCandidato() {
     }
@@ -34,16 +33,6 @@ public class UsuarioCandidato extends Usuarios implements Serializable{
     public void setCandidatos(ArrayList<UsuarioCandidato> candidatos) {
         this.candidatos = candidatos;
     }
-
-    public File getArchivo() {
-        return archivo;
-    }
-
-    public void setArchivo(File archivo) {
-        this.archivo = archivo;
-    }
-    
-
     public int getPos() {
         return pos;
     }
@@ -101,21 +90,23 @@ public class UsuarioCandidato extends Usuarios implements Serializable{
         candidatos.add(isaiasfonseca);
         candidatos.add(marlenealvarenga);
         candidatos.add(juanorlando);
-        archivo = new File("./UsuarioCandidato.cmb");
+        File archivo = new File("./UsuarioCandidato.cmb");
         try{
         
-            fw = new FileOutputStream(archivo);
+            fw = new FileOutputStream(archivo,false);
             bw = new ObjectOutputStream(fw);
             for (UsuarioCandidato t : candidatos) {
                 bw.writeObject(t);
             }
             bw.flush();
         } catch (Exception e) {
+            e.printStackTrace();
         }finally{
             try {
                 bw.close();
                 fw.close();
             } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
@@ -123,6 +114,7 @@ public class UsuarioCandidato extends Usuarios implements Serializable{
         try {
             candidatos = new ArrayList();
             UsuarioCandidato temp;
+            File archivo = new File("./UsuarioCandidato.cmb");
             if(archivo.exists()){
                 FileInputStream entrada = new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
@@ -136,6 +128,7 @@ public class UsuarioCandidato extends Usuarios implements Serializable{
                 entrada.close();
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     

@@ -1,8 +1,9 @@
 package proyectolab;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Usuarios {
+public class Usuarios implements Serializable {
 
     private String usuario;
     private String contrasena;

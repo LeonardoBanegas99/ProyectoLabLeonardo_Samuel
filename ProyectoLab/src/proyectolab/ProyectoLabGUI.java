@@ -30,7 +30,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
         usuario.add(new UsuarioCandidato(3,"juanorlando",  "123", null, null,null, null));
         candi.escribirArchivo();
         candi.cargarArchivo();
-        System.out.println(candi.getCandidatos());
+        usuario.addAll(candi.getCandidatos());
         
         // votos();
     }
@@ -1288,7 +1288,7 @@ public class ProyectoLabGUI extends javax.swing.JFrame {
                 FrameUsuarioComun.setVisible(true);
                 FrameIniciarSesion.setVisible(false);
               
-                cargarLista();
+                //cargarLista();
                 cargarListaUsuariosComunes();
 
                 cargarPublicaciones();
