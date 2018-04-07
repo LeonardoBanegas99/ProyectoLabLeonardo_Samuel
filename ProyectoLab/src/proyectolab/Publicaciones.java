@@ -30,7 +30,7 @@ public class Publicaciones {
 
     @Override
     public String toString() {
-        return "Publicaciones{" + "emisor=" + emisor + ", cuerpo=" + cuerpo + '}';
+        return "emisor=" + emisor + ", cuerpo=" + cuerpo;
     }
     
 }

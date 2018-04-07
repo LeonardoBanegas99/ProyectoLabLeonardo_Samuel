@@ -1,6 +1,5 @@
 package proyectolab;
 
-
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,12 +11,13 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class UsuarioCandidato extends Usuarios {
-    private ArrayList<UsuarioComun>seguidores = new ArrayList();
+
+    private ArrayList<UsuarioComun> seguidores = new ArrayList();
     private ArrayList<Publicaciones> publicaciones = new ArrayList();
     private ArrayList<String> certificaciones = new ArrayList();
     private int pos;
-    private ArrayList<UsuarioCandidato>candidatos = new ArrayList();
-    
+    private ArrayList<UsuarioCandidato> candidatos = new ArrayList();
+
     public UsuarioCandidato() {
     }
 
@@ -33,6 +33,7 @@ public class UsuarioCandidato extends Usuarios {
     public void setCandidatos(ArrayList<UsuarioCandidato> candidatos) {
         this.candidatos = candidatos;
     }
+
     public int getPos() {
         return pos;
     }
@@ -69,18 +70,20 @@ public class UsuarioCandidato extends Usuarios {
     public String toString() {
         return super.toString();
     }
-     public void escribirArchivo(){
+
+    public void escribirArchivo() {
+        candidatos.clear();
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
-        UsuarioCandidato josealfonzo = new UsuarioCandidato(1,"josealfonzo","candidato1",null,null,null,"JoseAlfonzoDiaz");
-        UsuarioCandidato salvadornasralla = new UsuarioCandidato(2,"salvadornasralla","candidato2",null,null,null,"SalvadorNasralla");
-        UsuarioCandidato eliseovallecillo = new UsuarioCandidato(3,"eliseovallecillo","candidato3",null,null,null,"EliseoVallecillo");
-        UsuarioCandidato lucasevangelisto = new UsuarioCandidato(4,"lucasevangelisto","candidato4",null,null,null,"LucasEvangelisto");
-        UsuarioCandidato luiszelaya = new UsuarioCandidato(5,"luiszelaya","candidato5",null,null,null,"LuisZelaya");
-        UsuarioCandidato romeovasquez = new UsuarioCandidato(6,"romeovasquez","candidato6",null,null,null,"RomeoVasquez");
-        UsuarioCandidato isaiasfonseca = new UsuarioCandidato(7,"isaiasfonseca","candidato7",null,null,null,"IsaiasFonseca");
-        UsuarioCandidato marlenealvarenga = new UsuarioCandidato(8,"marlenealvarenga","candidato8",null,null,null,"MarleneAlvarenga");
-        UsuarioCandidato juanorlando = new UsuarioCandidato(9,"juanorlando","candidato9",null,null,null,"JuanOrlandoHernandez");
+        UsuarioCandidato josealfonzo = new UsuarioCandidato(1, "josealfonzo", "candidato1", null, null, null, "JoseAlfonzoDiaz");
+        UsuarioCandidato salvadornasralla = new UsuarioCandidato(2, "salvadornasralla", "candidato2", null, null, null, "SalvadorNasralla");
+        UsuarioCandidato eliseovallecillo = new UsuarioCandidato(3, "eliseovallecillo", "candidato3", null, null, null, "EliseoVallecillo");
+        UsuarioCandidato lucasevangelisto = new UsuarioCandidato(4, "lucasevangelisto", "candidato4", null, null, null, "LucasEvangelisto");
+        UsuarioCandidato luiszelaya = new UsuarioCandidato(5, "luiszelaya", "candidato5", null, null, null, "LuisZelaya");
+        UsuarioCandidato romeovasquez = new UsuarioCandidato(6, "romeovasquez", "candidato6", null, null, null, "RomeoVasquez");
+        UsuarioCandidato isaiasfonseca = new UsuarioCandidato(7, "isaiasfonseca", "candidato7", null, null, null, "IsaiasFonseca");
+        UsuarioCandidato marlenealvarenga = new UsuarioCandidato(8, "marlenealvarenga", "candidato8", null, null, null, "MarleneAlvarenga");
+        UsuarioCandidato juanorlando = new UsuarioCandidato(9, "juanorlando", "candidato9", null, null, null, "JuanOrlandoHernandez");
         candidatos.add(josealfonzo);
         candidatos.add(salvadornasralla);
         candidatos.add(eliseovallecillo);
@@ -91,9 +94,9 @@ public class UsuarioCandidato extends Usuarios {
         candidatos.add(marlenealvarenga);
         candidatos.add(juanorlando);
         File archivo = new File("./UsuarioCandidato.cmb");
-        try{
-        
-            fw = new FileOutputStream(archivo,false);
+        try {
+
+            fw = new FileOutputStream(archivo, false);
             bw = new ObjectOutputStream(fw);
             for (UsuarioCandidato t : candidatos) {
                 bw.writeObject(t);
@@ -101,7 +104,7 @@ public class UsuarioCandidato extends Usuarios {
             bw.flush();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
                 bw.close();
                 fw.close();
@@ -110,16 +113,17 @@ public class UsuarioCandidato extends Usuarios {
             }
         }
     }
-     public void cargarArchivo(){
+
+    public void cargarArchivo() {
         try {
             candidatos = new ArrayList();
             UsuarioCandidato temp;
             File archivo = new File("./UsuarioCandidato.cmb");
-            if(archivo.exists()){
+            if (archivo.exists()) {
                 FileInputStream entrada = new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 try {
-                    while((temp=(UsuarioCandidato)objeto.readObject())!=null){
+                    while ((temp = (UsuarioCandidato) objeto.readObject()) != null) {
                         candidatos.add(temp);
                     }
                 } catch (EOFException e) {
@@ -131,5 +135,5 @@ public class UsuarioCandidato extends Usuarios {
             e.printStackTrace();
         }
     }
-    
+
 }
